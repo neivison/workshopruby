@@ -1,0 +1,52 @@
+<%= form_with(model: notadeaula, local: true) do |form| %>
+  <% if notadeaula.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notadeaula.errors.count, "error") %> prohibited this notadeaula from being saved:</h2>
+
+      <ul>
+      <% notadeaula.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor, id: :notadeaula_autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disciplina %>
+    <%= form.text_field :disciplina, id: :notadeaula_disciplina %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ano %>
+    <%= form.number_field :ano, id: :notadeaula_ano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semestre %>
+    <%= form.number_field :semestre, id: :notadeaula_semestre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data, id: :notadeaula_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, id: :notadeaula_titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :texto %>
+    <%= form.text_area :texto, id: :notadeaula_texto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

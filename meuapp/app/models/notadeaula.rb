@@ -1,0 +1,2 @@
+class Notadeaula < ApplicationRecord
+end
